@@ -43,7 +43,7 @@ class main {
             }
             System.out.println("Desea convertir otro numero?(s/n)");
             String continuar = miScanner.nextLine().toLowerCase();
-            if (continuar == "n") return;
+            if (continuar.equals("n")) return;
             miScanner.close();
         }
     }
