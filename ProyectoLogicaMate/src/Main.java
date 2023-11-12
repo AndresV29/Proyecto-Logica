@@ -14,16 +14,16 @@ class main {
 
     // Convertir string a int
     public static int binarioDecimal(String binaryStr) {
-        int decimal = 0, power = 0;
+        int decimal = 0, potencia = 0;
         
 
         // Iniciar a la derecha, cifra menos significativa
         for (int i = binaryStr.length() - 1; i >= 0; i--) {
-            char digit = binaryStr.charAt(i);
-            if (digit == '1') {
-                decimal += (int) Math.pow(2, power);
+            char digito = binaryStr.charAt(i);
+            if (digito == '1') {
+                decimal += (int) Math.pow(2, potencia);
             }
-            power++;
+            potencia++;
         }
 
         return decimal;
@@ -33,18 +33,18 @@ class main {
 
         while(true) {
             System.out.print("Convertidor de binario a decimal \nIngrese un numero binario: ");
-            String binaryStr = miScanner.nextLine();
+            String strBin = miScanner.nextLine();
 
-            if (validaBinario(binaryStr)) {
-                int decimal = binarioDecimal(binaryStr);
+            if (validaBinario(strBin)) { // binario = true
+                int decimal = binarioDecimal(strBin);
                 System.out.println("Equivalente en decimal: " + decimal);
             } else {
                 System.out.println("El numero binario ingresado no es valido.");
             }
             System.out.println("Desea convertir otro numero?(s/n)");
             String continuar = miScanner.nextLine().toLowerCase();
-            if (continuar.equals("n")) return;
-            miScanner.close();
+            if (continuar.equals("n")) break;
+            //miScanner.close();
         }
     }
 
